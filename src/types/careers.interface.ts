@@ -1,0 +1,24 @@
+export type ICareer = {
+  _id?: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  description: string;
+  requirements: { value: string }[];
+  whatYouDo: { value: string }[];
+  whatWeOffer: { value: string }[];
+  otherPerks: { value: string }[];
+  workingHours: string;
+  workingDays: string;
+  salaryRange: string;
+  deadline: string;
+  deleted: boolean;
+  vacancies: number;
+  applyLink: string;
+  open: boolean;
+  additionalNotes: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+};
