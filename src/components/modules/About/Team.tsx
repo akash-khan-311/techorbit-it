@@ -8,10 +8,12 @@ import { IEmployee } from "@/types/employee.interface";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Loader from "@/components/Loader";
 
 const OurTeamSection = () => {
-  const [teams, setTeams] = useState<IEmployee[]>([]);
+  const [teams, setTeams] = useState<IEmployee[] | null>(null);
   const t = useTranslation();
+
   useEffect(() => {
     const fetchTeam = async () => {
       try {
@@ -34,7 +36,8 @@ const OurTeamSection = () => {
     fetchTeam();
   }, []);
 
-  console.log(teams);
+  if (teams === null) return <Loader smallHeight />;
+
   return (
     <section id="team" className="py-20">
       <div className="max-w-7xl mx-auto px-6 ">
