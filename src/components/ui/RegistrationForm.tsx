@@ -11,6 +11,7 @@ import ButtonLoading from "./ButtonLoading";
 import { useTranslation } from "@/hooks/useTranslation";
 import Link from "next/link";
 import FormField from "./shared/Form/FormField";
+import { trackEvent } from "@/lib/FacebookPixel";
 const RegistrationForm = ({ exit }: { exit?: boolean }) => {
   const {
     register,
@@ -51,6 +52,7 @@ const RegistrationForm = ({ exit }: { exit?: boolean }) => {
           text: "An Expert Will Connection With You Soon",
           icon: "success",
         }).then(() => {
+          trackEvent("CompleteRegistration");
           router.push("/");
         });
       } else if (res.status === 409) {
