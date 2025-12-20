@@ -8,6 +8,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import Script from "next/script";
 import FacebookPixel from "@/components/FacebookPixel";
+import { Suspense } from "react";
 
 const bengaliFont = Noto_Serif_Bengali({
   variable: "--font-bengali",
@@ -92,7 +93,9 @@ export default function RootLayout({
           to-[#309889]/10
         `}
       >
-        <FacebookPixel />
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
         <Analytics />
         {children}
         {/* No Script fallback */}
