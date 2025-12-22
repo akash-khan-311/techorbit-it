@@ -16,7 +16,7 @@ export type TContents = {
   description: string;
 };
 
-const CareerSection = () => {
+const JobSection = () => {
   const t = useTranslation();
   const [jobs, setJobs] = useState<ICareer[]>([]);
   useEffect(() => {
@@ -71,4 +71,4 @@ const CareerSection = () => {
   );
 };
 
-export default CareerSection;
+export default JobSection;

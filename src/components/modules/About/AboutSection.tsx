@@ -8,6 +8,8 @@ const Container = dynamic(() => import("@/components/ui/Container"), {
 });
 import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
+import OurTeamSection from "./Team";
+import WhoWeAre from "./WhoWeAre";
 
 export type TContents = {
   value: string;
@@ -90,6 +92,8 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
+        <OurTeamSection />
+        <WhoWeAre />
       </Container>
     </section>
   );

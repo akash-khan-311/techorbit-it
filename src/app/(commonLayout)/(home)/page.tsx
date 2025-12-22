@@ -1,46 +1,83 @@
 import Loader from "@/components/Loader";
-import dynamic from "next/dynamic";
+import AboutSection from "@/components/modules/About/AboutSection";
+import CareerSection from "@/components/modules/Careers/CareerSection";
+import ContactSection from "@/components/modules/Contact/ContactSection";
+import CustomerAttraction from "@/components/modules/CustomerAttraction/CustomerAttraction";
+import HeroSection from "@/components/modules/Home/Hero";
+import PricingPage from "@/components/modules/Pricing/Pricing";
+import ServicesSection from "@/components/modules/Services/ServicesSection";
+import { Testimonials } from "@/components/ui/Testimonials";
+import type { Metadata } from "next";
 import { Suspense } from "react";
 
-const AboutSection = dynamic(
-  () => import("@/components/modules/About/AboutSection"),
-  {
-    loading: () => <Loader smallHeight={true} />,
-  }
-);
-const ContactSection = dynamic(
-  () => import("@/components/modules/Contact/ContactSection"),
-  {
-    loading: () => <Loader smallHeight={true} />,
-  }
-);
-const CustomerAttraction = dynamic(
-  () => import("@/components/modules/CustomerAttraction/CustomerAttraction"),
-  {
-    loading: () => <Loader smallHeight={true} />,
-  }
-);
-const ServicesSection = dynamic(
-  () => import("@/components/modules/Services/ServicesSection"),
-  {
-    loading: () => <Loader smallHeight={true} />,
-  }
-);
-const Testimonials = dynamic(
-  () => import("@/components/ui/Testimonials").then((mod) => mod.Testimonials),
-  {
-    loading: () => <Loader smallHeight={true} />,
-  }
-);
-const HeroSection = dynamic(() => import("@/components/modules/Home/Hero"), {
-  loading: () => <Loader smallHeight={true} />,
-});
+export const metadata: Metadata = {
+  title: {
+    default: "TechOrbit IT | Software Company in Bangladesh",
+    template: "%s | TechOrbit IT",
+  },
 
-export const metadata = {
-  title: "Home — TechOrbit IT",
   description:
-    "We provide e-commerce, corporate website, software solutions and more.",
+    "TechOrbit IT is a Bangladesh-based software company providing web development, eCommerce solutions, custom software, and IT services for startups and businesses.",
+
+  keywords: [
+    "TechOrbit IT",
+    "TechOrbit",
+    "software company in Bangladesh",
+    "IT company in Bangladesh",
+    "web development company in Bangladesh",
+    "custom software development Bangladesh",
+    "ecommerce website development Bangladesh",
+    "Bangladesh software firm",
+    "Dhaka software company",
+    "IT services Bangladesh",
+  ],
+
+  authors: [{ name: "TechOrbit IT" }],
+  creator: "TechOrbit IT",
+  publisher: "TechOrbit IT",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  alternates: {
+    canonical: "https://www.techorbitit.com",
+  },
+
+  openGraph: {
+    title: "TechOrbit IT | Software Company in Bangladesh",
+    description:
+      "TechOrbit IT provides professional web development, eCommerce solutions, and custom software services for businesses in Bangladesh.",
+    url: "https://www.techorbitit.com",
+    siteName: "TechOrbit IT",
+    images: [
+      {
+        url: "https://www.techorbitit.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TechOrbit IT - Software Company in Bangladesh",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "TechOrbit IT | Software Company in Bangladesh",
+    description:
+      "Bangladesh-based software company offering web development, eCommerce solutions, and custom IT services.",
+    images: ["https://www.techorbitit.com/og-image.jpg"],
+  },
+
+  category: "technology",
 };
+
 export default function Home() {
   return (
     <Suspense fallback={<Loader />}>
@@ -51,6 +88,8 @@ export default function Home() {
         <Testimonials />
       </div>
       <CustomerAttraction />
+      <PricingPage />
+      <CareerSection />
       <ContactSection />
     </Suspense>
   );

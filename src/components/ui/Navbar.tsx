@@ -12,7 +12,8 @@ import {
 import React, { useRef, useState } from "react";
 import Logo from "./shared/Logo";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useScrollSpy } from "@/hooks/useSCrollSpy";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -44,9 +45,13 @@ interface MobileNavHeaderProps {
   children: React.ReactNode;
   className?: string;
 }
-
+interface navItemsType {
+  name: string;
+  link: string;
+}
 interface MobileNavMenuProps {
   children: React.ReactNode;
+  navItems: navItemsType[];
   className?: string;
   isOpen: boolean;
   onClose: () => void;
@@ -123,6 +128,11 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
   const pathname = usePathname();
 
+  const router = useRouter();
+
+  const sectionIds = items.map((item) => item.link.replace("#", ""));
+  const activeId = useScrollSpy(sectionIds);
+
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
@@ -132,12 +142,28 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => {
-        const isActive = pathname === item.link;
+        const isActive = activeId === item.link.replace("#", "");
 
         return (
           <Link
             onMouseEnter={() => setHovered(idx)}
-            onClick={onItemClick}
+            onClick={(e) => {
+              e.preventDefault();
+
+              const sectionId = item.link.replace("#", "");
+
+              if (pathname !== "/") {
+                // 🔥 First go to home, then scroll
+                router.push(`/#${sectionId}`);
+                return;
+              }
+
+              // 🔥 Already on home → smooth scroll
+              const el = document.getElementById(sectionId);
+              el?.scrollIntoView({ behavior: "smooth" });
+
+              onItemClick?.();
+            }}
             className={cn(
               "relative px-4 py-2 text-white cursor-pointer rounded-full transition duration-200",
               isActive &&
@@ -208,11 +234,20 @@ export const MobileNavHeader = ({
 
 export const MobileNavMenu = ({
   children,
+  navItems,
   className,
   isOpen,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onClose,
 }: MobileNavMenuProps) => {
+  const [hovered, setHovered] = useState<number | null>(null);
+  const pathname = usePathname();
+
+  const router = useRouter();
+
+  // const isHome = pathname === "/";
+  const sectionIds = navItems.map((item) => item.link.replace("#", ""));
+  const activeId = useScrollSpy(sectionIds);
   return (
     <AnimatePresence>
       {isOpen && (
@@ -225,6 +260,44 @@ export const MobileNavMenu = ({
             className
           )}
         >
+          {navItems.map((item, idx) => {
+            const isActive = activeId === item.link.replace("#", "");
+            return (
+              <Link
+                onMouseEnter={() => setHovered(idx)}
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  const sectionId = item.link.replace("#", "");
+
+                  if (pathname !== "/") {
+                    // 🔥 First go to home, then scroll
+                    router.push(`/#${sectionId}`);
+                    return;
+                  }
+
+                  // 🔥 Already on home → smooth scroll
+                  const el = document.getElementById(sectionId);
+                  el?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={cn(
+                  "relative px-4 py-1 text-white cursor-pointer rounded-full transition duration-200",
+                  isActive &&
+                    "bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]"
+                )}
+                key={`link-${idx}`}
+                href={item.link}
+              >
+                {hovered === idx && !isActive && (
+                  <motion.div
+                    layoutId="hovered"
+                    className="absolute z-10 inset-0 h-full w-full rounded-full backdrop-blur-sm bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20"
+                  />
+                )}
+                <span className="relative z-20">{item.name}</span>
+              </Link>
+            );
+          })}
           {children}
         </motion.div>
       )}

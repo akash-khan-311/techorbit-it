@@ -2,7 +2,7 @@
 
 const Career = ({ items }: any) => {
   return (
-    <div className="rounded-2xl bg-gradient-to-tr from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white p-20 my-20">
+    <div className="rounded-2xl bg-gradient-to-tr from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white md:p-20 p-6 my-20">
       <div className="text-white space-y-3">
         <h2 className=" text-2xl md:text-3xl lg:text-4xl font-bold text-center">
           {items.title}

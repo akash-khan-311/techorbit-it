@@ -20,12 +20,12 @@ const bn = {
   registrationButton: { title: "রেজিস্ট্রেশন" },
 
   navItems: [
-    { name: "হোম", link: "/" },
-    { name: "আমাদের সম্পর্কে", link: "/about" },
-    { name: "সেবা", link: "/services" },
-    { name: "প্রাইসিং", link: "/pricing" },
-    { name: "যোগাযোগ", link: "/contact" },
-    { name: "ক্যারিয়ার", link: "/careers" },
+    { name: "হোম", link: "#home" },
+    { name: "আমাদের সম্পর্কে", link: "#about" },
+    { name: "সেবা", link: "#services" },
+    { name: "প্রাইসিং", link: "#pricing" },
+    { name: "ক্যারিয়ার", link: "#careers" },
+    { name: "যোগাযোগ", link: "#contact" },
   ],
 
   hero: {

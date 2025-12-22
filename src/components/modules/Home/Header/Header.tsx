@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/Navbar";
 import RegistrationButton from "@/components/ui/shared/RegistrationButton";
 import { useTranslation } from "@/hooks/useTranslation";
-import Link from "next/link";
+
 import { useState } from "react";
 
 export default function Header() {
@@ -47,17 +47,11 @@ export default function Header() {
             />
           </div>
         </MobileNavHeader>
-        <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
-          {t.navItems.map((item) => (
-            <Link
-              key={item.link}
-              href={item.link}
-              className="text-sm cursor-pointer"
-            >
-              {item.name}
-            </Link>
-          ))}
-
+        <MobileNavMenu
+          isOpen={isOpen}
+          navItems={t.navItems}
+          onClose={() => setIsOpen(false)}
+        >
           <NavbarButton>
             <RegistrationButton className="text-sm  text-gray-800" />
           </NavbarButton>

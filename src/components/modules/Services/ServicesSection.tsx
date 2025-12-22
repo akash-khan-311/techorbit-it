@@ -7,6 +7,7 @@ const Container = dynamic(() => import("@/components/ui/Container"), {
 import TextType from "@/components/ui/TextType";
 import { useTranslation } from "@/hooks/useTranslation";
 import { FC } from "react";
+import ServiceCard from "./ServiceCard";
 
 const ServicesSection: FC = () => {
   const t = useTranslation();
@@ -28,9 +29,8 @@ const ServicesSection: FC = () => {
             {t.services.text}
           </p>
         </div>
-
         {/* Services Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 my-10">
           {t.services.service.map((service, index) => (
             <Card
               key={index}
@@ -38,6 +38,46 @@ const ServicesSection: FC = () => {
               description={service.description}
               icon={service.icon}
             />
+          ))}
+        </div>
+        <div className="space-y-10">
+          <ServiceCard
+            id={"web"}
+            service={t.services.info[0]}
+            imagePath={"/images/web.jpg"}
+            className="flex flex-col lg:flex-row justify-between items-center gap-x-10 lg:space-y-0 space-y-10 "
+          />
+          <ServiceCard
+            id={"e_commerce"}
+            service={t.services.info[1]}
+            imagePath={"/images/e_commerce.webp"}
+            className="flex flex-col lg:flex-row-reverse  justify-between items-center gap-x-10 lg:space-y-0 space-y-10"
+          />
+          <ServiceCard
+            id={"consulting"}
+            service={t.services.info[2]}
+            imagePath={"/images/consulting.webp"}
+            className="flex flex-col lg:flex-row  justify-between items-center gap-x-10 lg:space-y-0 space-y-10"
+          />
+        </div>
+
+        <div
+          id="support"
+          className="flex flex-col lg:flex-row justify-between items-center gap-x-10 my-20 py-10"
+        >
+          {(Array.isArray(t.services.support)
+            ? t.services.support
+            : [t.services.support]
+          ).map((s, index) => (
+            <div
+              key={index}
+              className="text-white flex flex-col lg:w-1/2  mx-auto space-y-5"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl text-left pt-10 font-bold">
+                {s.title}
+              </h2>
+              <p className="text-left">{s.des}</p>
+            </div>
           ))}
         </div>
       </Container>

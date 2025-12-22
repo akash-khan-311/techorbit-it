@@ -19,12 +19,12 @@ import { FaCheck, FaTimes } from "react-icons/fa";
 const en = {
   registrationButton: { title: "Registration" },
   navItems: [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Services", link: "/services" },
-    { name: "Pricing", link: "/pricing" },
-    { name: "Contact", link: "/contact" },
-    { name: "Careers", link: "/careers" },
+    { name: "Home", link: "#home" },
+    { name: "About", link: "#about" },
+    { name: "Services", link: "#services" },
+    { name: "Pricing", link: "#pricing" },
+    { name: "Careers", link: "#careers" },
+    { name: "Contact", link: "#contact" },
   ],
   hero: {
     title: "Your Trusted Partner in the Digital Orbit",
