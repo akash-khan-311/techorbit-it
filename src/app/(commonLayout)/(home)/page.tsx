@@ -1,5 +1,6 @@
 import Loader from "@/components/Loader";
 import AboutSection from "@/components/modules/About/AboutSection";
+import BlogsSection from "@/components/modules/Blogs/BlogsSection";
 import CareerSection from "@/components/modules/Careers/CareerSection";
 import ContactSection from "@/components/modules/Contact/ContactSection";
 import CustomerAttraction from "@/components/modules/CustomerAttraction/CustomerAttraction";
@@ -89,6 +90,7 @@ export default function Home() {
       </div>
       <CustomerAttraction />
       <PricingPage />
+      <BlogsSection />
       <CareerSection />
       <ContactSection />
     </Suspense>

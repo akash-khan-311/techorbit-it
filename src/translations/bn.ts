@@ -25,6 +25,7 @@ const bn = {
     { name: "সেবা", link: "#services" },
     { name: "প্রাইসিং", link: "#pricing" },
     { name: "ক্যারিয়ার", link: "#careers" },
+    { name: "ব্লগস", link: "#blogs" },
     { name: "যোগাযোগ", link: "#contact" },
   ],
 

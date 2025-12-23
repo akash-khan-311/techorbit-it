@@ -12,6 +12,7 @@ const AdminMenu = () => {
       <MenuItem icon={FaUserCog} label="Manage Customers" path="/customers" />
       <MenuItem icon={FaUsers} label="Our Employees" path="/employees" />
       <MenuItem icon={FaUsers} label="Post a Job" path="/post/job" />
+      <MenuItem icon={FaUsers} label="Post a Blog" path="/post/blog" />
       <MenuItem icon={FaUsers} label="Jobs" path="/jobs" />
       <MenuItem icon={VscListOrdered} label="Orders" path="/orders" />
       <MenuItem icon={MdPayment} label="Transactions" path="/transactions" />
