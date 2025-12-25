@@ -34,7 +34,7 @@ const DashboardJobCard = ({ job, onUpdate }: Props) => {
   }, [selectedOpen, job._id, job.open, onUpdate]);
 
   return (
-    <div className="w-full bg-gradient-to-r from-[#0F1C3F] to-[#070B2E] text-white p-6 md:p-10 lg:p-16 rounded-2xl shadow-lg border border-white/10 relative overflow-hidden">
+    <div className="w-full bg-linear-to-r from-[#0F1C3F] to-[#070B2E] text-white p-6 md:p-10 lg:p-16 rounded-2xl shadow-lg border border-white/10 relative overflow-hidden">
       {/* Status Badge */}
       <span
         className={`${
@@ -82,10 +82,10 @@ const DashboardJobCard = ({ job, onUpdate }: Props) => {
 
         {/* Right – Job Details Button */}
         <div className="w-full flex justify-between items-center gap-x-10 md:w-auto mt-2 md:mt-0">
-          <button className="w-full md:w-auto bg-gradient-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] transition duration-200 px-6 py-2 rounded-lg font-semibold text-white cursor-pointer">
+          <button className="w-full md:w-auto bg-linear-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] transition duration-200 px-6 py-2 rounded-lg font-semibold text-white cursor-pointer">
             Edit Job
           </button>
-          <button className="w-full md:w-auto bg-gradient-to-r from-[#c25454] to-[#6b1d06] hover:from-[#663434] hover:to-[#da3e3e] transition duration-200 px-6 py-2 rounded-lg font-semibold text-white cursor-pointer">
+          <button className="w-full md:w-auto bg-linear-to-r from-[#c25454] to-[#6b1d06] hover:from-[#663434] hover:to-[#da3e3e] transition duration-200 px-6 py-2 rounded-lg font-semibold text-white cursor-pointer">
             Delete Job
           </button>
 

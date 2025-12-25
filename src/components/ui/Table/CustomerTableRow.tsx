@@ -29,14 +29,10 @@ const CustomerTableRow = ({ customer }: Props) => {
       >
         Customer
       </td>
-      <td
-        className={`py-2 px-3 text-base text-white  font-normal min-w-[250px]`}
-      >
+      <td className={`py-2 px-3 text-base text-white  font-normal min-w-62.5`}>
         {customer?.email}
       </td>
-      <td
-        className={`py-2 px-3 text-base text-white  font-normal min-w-[250px]`}
-      >
+      <td className={`py-2 px-3 text-base text-white  font-normal min-w-62.5`}>
         <TableActionButton customer={customer} />
       </td>
     </tr>

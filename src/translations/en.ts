@@ -24,8 +24,14 @@ const en = {
     { name: "Services", link: "#services" },
     { name: "Pricing", link: "#pricing" },
     { name: "Careers", link: "#careers" },
+    { name: "Blogs", link: "#blogs" },
     { name: "Contact", link: "#contact" },
   ],
+  blogsSection: {
+    title: "Our Blogs",
+    subTitle: "Read and Explore Our Latest Insights and Updates",
+  },
+
   hero: {
     title: "Your Trusted Partner in the Digital Orbit",
     subTitle:

@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 backdrop-blur-sm">
+    <footer className="relative overflow-hidden bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 backdrop-blur-sm">
       <div className="relative z-10">
         {/* Main Footer Content */}
         <Container>

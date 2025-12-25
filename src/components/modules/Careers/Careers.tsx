@@ -37,7 +37,7 @@ const JobSection = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 border p-8 rounded-2xl text-center bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white">
+          <div className="mt-16 border p-8 rounded-2xl text-center bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white">
             <h4 className="text-lg font-medium text-white mb-2">
               Don’t see your role?
             </h4>
@@ -49,7 +49,7 @@ const JobSection = () => {
             </p>
             <Link
               href="mailto:techorbitit3@gmail.com"
-              className="inline-block bg-gradient-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] transition duration-200 px-6 py-2 rounded-lg font-semibold text-white cursor-pointer"
+              className="inline-block bg-linear-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] transition duration-200 px-6 py-2 rounded-lg font-semibold text-white cursor-pointer"
             >
               Send CV
             </Link>

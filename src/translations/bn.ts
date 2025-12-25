@@ -25,8 +25,14 @@ const bn = {
     { name: "সেবা", link: "#services" },
     { name: "প্রাইসিং", link: "#pricing" },
     { name: "ক্যারিয়ার", link: "#careers" },
+    { name: "ব্লগস", link: "#blogs" },
     { name: "যোগাযোগ", link: "#contact" },
   ],
+
+  blogsSection: {
+    title: "আমাদের ব্লগস",
+    subTitle: "আমাদের সর্বশেষ ব্লগ এবং আপডেটগুলি পড়ুন এবং এক্সপ্লোর করুন",
+  },
 
   hero: {
     title: "টেক অরবিট – আপনার বিশ্বস্ত ডিজিটাল পার্টনার",

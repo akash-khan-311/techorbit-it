@@ -126,7 +126,7 @@ function AnimatedCounter({
       </motion.div>
       <motion.p
         className={cn(
-          "text-lg text-gray-400  leading-relaxed px-1 sm:px-2 hyphens-auto break-words"
+          "text-lg text-gray-400  leading-relaxed px-1 sm:px-2 hyphens-auto wrap-break-word"
         )}
         style={{ wordBreak: "break-word", overflowWrap: "break-word" }}
         initial={{ opacity: 0 }}

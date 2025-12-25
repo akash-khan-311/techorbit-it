@@ -111,10 +111,10 @@ const ContactSection: React.FC = () => {
                   key={index}
                   variants={cardVariants}
                   whileHover="hover"
-                  className="bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300"
+                  className="bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300"
                 >
                   <div className="flex items-center mb-4">
-                    <div className="p-3 bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 rounded-full text-white mr-4">
+                    <div className="p-3 bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 rounded-full text-white mr-4">
                       <info.icon className="w-6 h-6" />
                     </div>
                     <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-200">
@@ -159,10 +159,10 @@ const ContactSection: React.FC = () => {
                       key={index}
                       variants={cardVariants}
                       whileHover="hover"
-                      className="bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300"
+                      className="bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  p-6 rounded-2xl shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300"
                     >
                       <div className="flex items-start space-x-4">
-                        <div className="p-3 bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 rounded-full text-white">
+                        <div className="p-3 bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 rounded-full text-white">
                           <feature.icon className="w-6 h-6" />
                         </div>
                         <div>

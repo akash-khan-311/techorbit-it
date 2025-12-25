@@ -7,8 +7,6 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-// import Link from "next/link";
-
 import React, { useRef, useState } from "react";
 import Logo from "./shared/Logo";
 import Link from "next/link";
@@ -78,7 +76,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn(
-        "sticky  top-5 z-40 w-full container mx-auto px-3 md:px-0 flex-grow",
+        "sticky  top-5 z-40 w-full container mx-auto px-3 md:px-0 grow",
         className
       )}
     >
@@ -102,7 +100,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         boxShadow: visible
           ? "0 0 24px rgba(34, 42, 53, 0.06), 0 1px 1px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(34, 42, 53, 0.04), 0 0 4px rgba(34, 42, 53, 0.08), 0 16px 68px rgba(47, 48, 55, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1) inset"
           : "none",
-        width: visible ? "40% " : "100%",
+        width: visible ? "70% " : "100%",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -111,10 +109,10 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         damping: 50,
       }}
       style={{
-        minWidth: "1000px",
+        minWidth: "1200px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full  flex-row items-center justify-between self-start rounded-full  px-3  py-2 lg:flex dark:bg-transparent ",
+        "relative z-60 mx-auto hidden w-full  flex-row items-center justify-between self-start rounded-full  px-3  py-2 lg:flex dark:bg-transparent ",
         visible && "backdrop-blur-2xl bg-black/50  dark:bg-transparent ",
         className
       )}
@@ -167,7 +165,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             className={cn(
               "relative px-4 py-2 text-white cursor-pointer rounded-full transition duration-200",
               isActive &&
-                "bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]"
+                "bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]"
             )}
             key={`link-${idx}`}
             href={item.link}
@@ -175,7 +173,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             {hovered === idx && !isActive && (
               <motion.div
                 layoutId="hovered"
-                className="absolute z-10 inset-0 h-full w-full rounded-full backdrop-blur-sm bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20"
+                className="absolute z-10 inset-0 h-full w-full rounded-full backdrop-blur-sm bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20"
               />
             )}
             <span className="relative z-20">{item.name}</span>
@@ -256,7 +254,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-slate-900 text-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-slate-900 text-white px-4 py-8 shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]",
             className
           )}
         >
@@ -283,7 +281,7 @@ export const MobileNavMenu = ({
                 className={cn(
                   "relative px-4 py-1 text-white cursor-pointer rounded-full transition duration-200",
                   isActive &&
-                    "bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]"
+                    "bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]"
                 )}
                 key={`link-${idx}`}
                 href={item.link}
@@ -291,7 +289,7 @@ export const MobileNavMenu = ({
                 {hovered === idx && !isActive && (
                   <motion.div
                     layoutId="hovered"
-                    className="absolute z-10 inset-0 h-full w-full rounded-full backdrop-blur-sm bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20"
+                    className="absolute z-10 inset-0 h-full w-full rounded-full backdrop-blur-sm bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20"
                   />
                 )}
                 <span className="relative z-20">{item.name}</span>
@@ -331,7 +329,7 @@ export const NavbarButton = ({
   as?: React.ElementType;
   children: React.ReactNode;
   className?: string;
-  variant?: "primary" | "secondary" | "dark" | "gradient";
+  variant?: "primary" | "secondary" | "dark" | "linear";
 } & (
   | React.ComponentPropsWithoutRef<"a">
   | React.ComponentPropsWithoutRef<"button">

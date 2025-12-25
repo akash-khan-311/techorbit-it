@@ -309,7 +309,7 @@ export default function JobForm({
 
       <button
         type="submit"
-        className="hover:-translate-y-0.5 bg-gradient-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] cursor-pointer transition duration-200  text-center w-full md:w-1/2 lg:w-1/3 py-2 rounded text-white font-semibold text-lg mx-auto block"
+        className="hover:-translate-y-0.5 bg-linear-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] cursor-pointer transition duration-200  text-center w-full md:w-1/2 lg:w-1/3 py-2 rounded text-white font-semibold text-lg mx-auto block"
       >
         {loading ? "Posting Job..." : "Post Job"}
       </button>

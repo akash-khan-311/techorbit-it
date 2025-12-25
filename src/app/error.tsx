@@ -31,12 +31,12 @@ export default function ErrorPage({ error, reset }: Props) {
   const handleHome = () => router.push("/");
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 via-[#05051a] to-slate-900 px-4">
+    <main className="min-h-screen flex items-center justify-center bg-linear-to-b from-slate-900 via-[#05051a] to-slate-900 px-4">
       <div className="w-full max-w-4xl bg-white/5 backdrop-blur-md border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           {/* Illustration */}
           <div className="flex-shrink-0">
-            <div className="w-56 h-56 md:w-72 md:h-72 bg-gradient-to-tr from-blue-700/30 to-violet-600/20 rounded-2xl flex items-center justify-center">
+            <div className="w-56 h-56 md:w-72 md:h-72 bg-linear-to-tr from-blue-700/30 to-violet-600/20 rounded-2xl flex items-center justify-center">
               <svg
                 width="160"
                 height="160"
@@ -103,7 +103,7 @@ export default function ErrorPage({ error, reset }: Props) {
             <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
               <button
                 onClick={handleRetry}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium shadow hover:scale-[1.01] active:translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-linear-to-r from-blue-500 to-indigo-600 text-white font-medium shadow hover:scale-[1.01] active:translate-y-0.5 transition-all"
                 aria-label="Retry"
               >
                 Retry
