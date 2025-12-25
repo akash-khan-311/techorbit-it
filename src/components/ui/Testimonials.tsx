@@ -134,25 +134,22 @@ export const Testimonials: FC<TestimonialsProps> = () => {
   };
 
   return (
-    <section
-      id="testimonials"
-      className="relative   text-white overflow-hidden"
-    >
+    <section id="testimonials" className="relative overflow-hidden text-white">
       {/* Enhanced Background Effects */}
-      <div className="absolute inset-0">{/* Animated gradient mesh */}</div>
+      <div className="absolute inset-0">{/* Animated linear mesh */}</div>
 
       <motion.div
         ref={containerRef}
-        className="relative z-10 max-w-7xl mx-auto px-6"
+        className="relative z-10 px-6 mx-auto max-w-7xl"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
         {/* Header */}
-        <motion.div className="text-center mb-20" variants={fadeInUp}>
+        <motion.div className="mb-20 text-center" variants={fadeInUp}>
           <motion.div
-            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.08] border border-white/[0.15] backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-3 px-4 py-2 mb-6 border rounded-full bg-white/8 border-white/15 backdrop-blur-sm"
             whileHover={{
               scale: 1.05,
               borderColor: "rgba(255, 255, 255, 0.3)",
@@ -162,7 +159,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
               animate={{ rotate: 360 }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             >
-              <Sparkles className="h-4 w-4 text-indigo-300" />
+              <Sparkles className="w-4 h-4 text-indigo-300" />
             </motion.div>
             <span className="text-sm font-medium text-white/80">
               ✨ {t.review.tagLine}
@@ -171,15 +168,15 @@ export const Testimonials: FC<TestimonialsProps> = () => {
           </motion.div>
 
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight "
+            className="mb-8 text-3xl font-bold leading-tight md:text-4xl lg:text-5xl "
             variants={fadeInUp}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-white/80">
               {t.review.title}
             </span>
             <br />
             <motion.span
-              className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-rose-300"
+              className="text-transparent bg-clip-text bg-linear-to-r from-indigo-300 via-purple-300 to-rose-300"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
@@ -197,7 +194,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
           </motion.h2>
 
           <motion.p
-            className="text-sm md:text-base text-white/60 max-w-4xl mx-auto leading-relaxed"
+            className="max-w-4xl mx-auto text-sm leading-relaxed md:text-base text-white/60"
             variants={fadeInUp}
           >
             {t.review.text}
@@ -206,7 +203,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
 
         {/* Main Testimonial Display */}
         <div className="relative max-w-6xl mx-auto mb-16">
-          <div className="relative h-[700px] md:h-[400px] perspective-1000">
+          <div className="relative h-175 md:h-100 perspective-1000">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -223,10 +220,10 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                 }}
                 className="absolute inset-0"
               >
-                <div className="relative h-full bg-gradient-to-br from-white/[0.08] to-white/[0.02] backdrop-blur-xl rounded-3xl border border-white/[0.15] p-8 md:p-12 overflow-hidden group">
-                  {/* Animated background gradient */}
+                <div className="relative h-full bg-linear-to-br from-white/8 to-white/2 backdrop-blur-xl rounded-3xl border border-white/[0.15] p-8 md:p-12 overflow-hidden group">
+                  {/* Animated background linear */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.08] via-purple-500/[0.05] to-rose-500/[0.08] rounded-3xl"
+                    className="absolute inset-0 bg-linear-to-br from-indigo-500/8 via-purple-500/5 to-rose-500/8 rounded-3xl"
                     animate={{
                       backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
                     }}
@@ -249,7 +246,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                     <Quote className="w-16 h-16 text-white" />
                   </motion.div>
 
-                  <div className="relative z-10 h-full flex flex-col md:flex-row items-center gap-8">
+                  <div className="relative z-10 flex flex-col items-center h-full gap-8 md:flex-row">
                     {/* User Info */}
                     <div className="flex-shrink-0 text-center md:text-left">
                       <motion.div
@@ -257,17 +254,17 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="w-24 h-24 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-white/20 relative">
+                        <div className="relative w-24 h-24 mx-auto overflow-hidden border-4 rounded-full md:mx-0 border-white/20">
                           <Image
                             src={testimonials[currentIndex].avatar}
                             alt={testimonials[currentIndex].name}
-                            className="w-full h-full object-cover"
+                            className="object-cover w-full h-full"
                             height={100}
                             width={100}
                             priority
                           />
                           <motion.div
-                            className="absolute inset-0 bg-gradient-to-br from-indigo-400/20 to-rose-400/20"
+                            className="absolute inset-0 bg-linear-to-br from-indigo-400/20 to-rose-400/20"
                             animate={{ opacity: [0, 0.3, 0] }}
                             transition={{ duration: 3, repeat: Infinity }}
                           />
@@ -275,7 +272,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
 
                         {/* Floating ring animation */}
                         <motion.div
-                          className="absolute inset-0 border-2 border-indigo-400/30 rounded-full"
+                          className="absolute inset-0 border-2 rounded-full border-indigo-400/30"
                           animate={{
                             scale: [1, 1.4, 1],
                             opacity: [0.5, 0, 0.5],
@@ -284,18 +281,18 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                         />
                       </motion.div>
 
-                      <h3 className="text-xl font-bold text-white mb-2">
+                      <h3 className="mb-2 text-xl font-bold text-white">
                         {testimonials[currentIndex].name}
                       </h3>
-                      <p className="text-indigo-300 mb-1 font-medium">
+                      <p className="mb-1 font-medium text-indigo-300">
                         {testimonials[currentIndex].role}
                       </p>
-                      <p className="text-white/60 mb-4">
+                      <p className="mb-4 text-white/60">
                         {testimonials[currentIndex].company}
                       </p>
 
                       {/* Star Rating */}
-                      <div className="flex justify-center md:justify-start gap-1 mb-6 ">
+                      <div className="flex justify-center gap-1 mb-6 md:justify-start ">
                         {[...Array(testimonials[currentIndex].rating)].map(
                           (_, i) => (
                             <motion.div
@@ -304,7 +301,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ delay: i * 0.1, duration: 0.3 }}
                             >
-                              <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                             </motion.div>
                           )
                         )}
@@ -314,7 +311,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                     {/* Content */}
                     <div className="flex-1 text-center md:text-left ">
                       <motion.blockquote
-                        className=" text-white/90 leading-relaxed mb-8 font-light italic"
+                        className="mb-8 italic font-light leading-relaxed text-white/90"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
@@ -323,7 +320,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                       </motion.blockquote>
 
                       {/* Results */}
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                         {testimonials[currentIndex].results.map((result, i) => (
                           <motion.div
                             key={i}
@@ -335,7 +332,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
                               backgroundColor: "rgba(255, 255, 255, 0.1)",
                             }}
                           >
-                            <span className="text-sm text-white/70 font-medium">
+                            <span className="text-sm font-medium text-white/70">
                               {result}
                             </span>
                           </motion.div>
@@ -349,7 +346,7 @@ export const Testimonials: FC<TestimonialsProps> = () => {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex justify-center items-center gap-6 mt-8">
+          <div className="flex items-center justify-center gap-6 mt-8">
             <motion.button
               onClick={prevTestimonial}
               className="p-3 rounded-full bg-white/[0.08] border border-white/[0.15] backdrop-blur-sm text-white hover:bg-white/[0.15] transition-all"

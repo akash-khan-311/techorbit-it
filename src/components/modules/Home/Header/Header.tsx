@@ -30,7 +30,7 @@ export default function Header() {
         <div className="flex items-center gap-x-5">
           <LanguageSwitcher />
           <NavbarButton>
-            <RegistrationButton className="text-sm  text-gray-800" />
+            <RegistrationButton className="text-sm text-gray-800" />
           </NavbarButton>
         </div>
       </NavBody>
@@ -39,7 +39,7 @@ export default function Header() {
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo />
-          <div className="flex justify-center items-center gap-x-3">
+          <div className="flex items-center justify-center gap-x-3">
             <LanguageSwitcher />
             <MobileNavToggle
               isOpen={isOpen}
@@ -53,7 +53,7 @@ export default function Header() {
           onClose={() => setIsOpen(false)}
         >
           <NavbarButton>
-            <RegistrationButton className="text-sm  text-gray-800" />
+            <RegistrationButton className="text-sm text-gray-800" />
           </NavbarButton>
         </MobileNavMenu>
       </MobileNav>

@@ -14,7 +14,7 @@ const EmployeeTableRow = ({ employee }: { employee: IEmployee }) => {
         <div>
           <div className="flex items-center gap-x-5">
             <Image
-              className="rounded-full"
+              className="object-cover rounded-full w-14 h-14"
               src={employee?.profileImage}
               width={50}
               height={50}
@@ -37,24 +37,20 @@ const EmployeeTableRow = ({ employee }: { employee: IEmployee }) => {
       >
         {employee?.designation}
       </td>
-      <td
-        className={`py-2 px-3 text-base  font-normal min-w-[250px] text-white`}
-      >
+      <td className={`py-2 px-3 text-base  font-normal min-w-62.5 text-white`}>
         {employee?.email}
       </td>
-      <td
-        className={`py-2 px-3 text-base  font-normal min-w-[250px] text-white`}
-      >
+      <td className={`py-2 px-3 text-base  font-normal min-w-62.5 text-white`}>
         <div>
           <button
             type="button"
-            className="mr-3 text-sm cursor-pointer bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+            className="px-2 py-1 mr-3 text-sm text-white bg-blue-500 rounded cursor-pointer hover:bg-blue-700 focus:outline-none focus:shadow-outline"
           >
             Edit
           </button>
           <button
             type="button"
-            className="text-sm cursor-pointer bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+            className="px-2 py-1 text-sm text-white bg-red-500 rounded cursor-pointer hover:bg-red-700 focus:outline-none focus:shadow-outline"
           >
             Delete
           </button>

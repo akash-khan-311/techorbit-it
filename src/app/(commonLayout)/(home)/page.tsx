@@ -90,8 +90,8 @@ export default function Home() {
       </div>
       <CustomerAttraction />
       <PricingPage />
-      <BlogsSection />
       <CareerSection />
+      <BlogsSection />
       <ContactSection />
     </Suspense>
   );

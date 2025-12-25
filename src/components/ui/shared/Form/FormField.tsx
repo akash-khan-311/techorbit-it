@@ -15,6 +15,7 @@ import { ChevronDownIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 type FormFieldProps = {
+  readOnly?: boolean;
   label: string;
   name: string;
   errorMessage?: string;
@@ -42,6 +43,7 @@ type FormFieldProps = {
 };
 
 const FormField: React.FC<FormFieldProps> = ({
+  readOnly,
   label,
   errorMessage,
   name,
@@ -69,7 +71,7 @@ const FormField: React.FC<FormFieldProps> = ({
               {...register(`${name}.${index}.value`, {
                 required: required ? errorMessage : false,
               })}
-              className="flex-1 px-4 py-2 border text-white border-gray-300 rounded-lg focus:ring-1 focus:ring-[#1BCDD2] focus:border-[#1BCDD2] outline-none transition-all"
+              className="flex-1 px-4 py-2 border text-white border-gray-300 rounded-lg focus:ring-1 focus:ring-[#1BCDD2] focus:border-[#1BCDD2] outline-none transition-all "
               placeholder={placeholder || label}
             />
             {index === fields.length - 1 && append && (
@@ -187,6 +189,17 @@ const FormField: React.FC<FormFieldProps> = ({
             </label>
           ))}
         </div>
+      ) : name === "slug" ? (
+        <input
+          id={name}
+          readOnly={readOnly}
+          {...register(name, {
+            required: required ? errorMessage : false,
+          })}
+          type={type}
+          placeholder={placeholder}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-1 focus:ring-[#1BCDD2] focus:border-[#1BCDD2] outline-none transition-all text-white"
+        />
       ) : (
         <input
           id={name}

@@ -6,7 +6,6 @@ interface LanguageState {
   lang: LangType;
 }
 
-// localStorage থেকে শুরু করার আগে চেক করা
 const initialLang = (typeof window !== "undefined" &&
   localStorage.getItem("lang")) as LangType | null;
 

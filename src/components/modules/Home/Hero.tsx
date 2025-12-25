@@ -5,20 +5,25 @@ import { ArrowRight } from "lucide-react";
 import SplitText from "@/components/ui/SplitText";
 import RegistrationButton from "@/components/ui/shared/RegistrationButton";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useGetTodosQuery } from "@/redux/api/api";
 
 const HeroSection = () => {
   const t = useTranslation();
+  const { data: todos, isLoading, isError } = useGetTodosQuery(undefined);
 
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
+  console.log(todos);
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden "
+      className="relative flex items-center justify-center w-full min-h-screen overflow-hidden "
     >
       {/* Animated Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Curved Lines */}
         <svg
-          className="absolute h-full w-full"
+          className="absolute w-full h-full"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
@@ -111,7 +116,7 @@ const HeroSection = () => {
                 top: `${15 + i * 10}%`,
                 height: "1px",
                 width: "100%",
-                background: `linear-gradient(90deg, transparent, ${
+                background: `linear-linear(90deg, transparent, ${
                   i % 2 === 0 ? "#22d3ee" : "#8b5cf6"
                 }60, transparent)`,
               }}
@@ -121,7 +126,7 @@ const HeroSection = () => {
       </div>
 
       {/* Animated Background */}
-      <div className="absolute inset-0 z-[1]">
+      <div className="absolute inset-0 z-1">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -137,17 +142,17 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-[3] px-4 text-center">
+      <div className="container relative px-4 text-center z-3">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mx-auto max-w-5xl space-y-8"
+          className="max-w-5xl mx-auto space-y-8"
         >
           <SplitText
             key={t.hero.title}
             text={t.hero.title}
-            className="text-4xl  md:text-5xl lg:text-6xl xl:text-7xl text-white font-bold tracking-tighter py-4 leading-tight"
+            className="py-4 text-4xl font-bold leading-tight tracking-tighter text-white md:text-5xl lg:text-6xl xl:text-7xl"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -159,7 +164,7 @@ const HeroSection = () => {
             textAlign="center"
           />
 
-          <p className="mx-auto max-w-2xl  text-gray-400 sm:text-xl">
+          <p className="max-w-2xl mx-auto text-gray-400 sm:text-xl">
             {t.hero.subTitle}
           </p>
           <RegistrationButton

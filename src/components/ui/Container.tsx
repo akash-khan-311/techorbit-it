@@ -1,7 +1,5 @@
 const Container = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="container mx-auto px-3 md:px-0 flex-grow">{children}</div>
-  );
+  return <div className="container px-3 mx-auto md:px-0 grow">{children}</div>;
 };
 
 export default Container;

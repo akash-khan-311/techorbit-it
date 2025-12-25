@@ -9,7 +9,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 const WhoWeAre = () => {
   const t = useTranslation();
   return (
-    <section className="w-full bg-gradient-to-tr rounded-2xl from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white py-16 md:py-24">
+    <section className="w-full bg-linear-to-tr rounded-2xl from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         {/* Heading */}
         <TextType
@@ -32,7 +32,7 @@ const WhoWeAre = () => {
         </div>
 
         {/* Highlight Box */}
-        <div className="bg-gradient-to-r from-[#0F1C3F] to-[#070B2E] mt-10 p-6 md:p-8 rounded-xl border border-gray-700">
+        <div className="bg-linear-to-r from-[#0F1C3F] to-[#070B2E] mt-10 p-6 md:p-8 rounded-xl border border-gray-700">
           <p className="text-center text-lg md:text-xl font-medium text-gray-200">
             {t.about.whoWeAre.tagLine}
           </p>

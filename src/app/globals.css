@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@plugin "@tailwindcss/typography";
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #0f172b inset !important; /* dark background example */
   -webkit-text-fill-color: #fff !important; /* text color */
@@ -123,9 +123,9 @@ input:-webkit-autofill {
   font-family: var(--font-geist-sans);
 }
 
-.font-bengali {
+/* .font-bengali {
   font-family: var(--font-bengali);
-}
+} */
 .confirmBtn {
   padding: 2px 60px !important;
 
@@ -133,7 +133,7 @@ input:-webkit-autofill {
   line-height: 1.75rem;
   color: #fff;
   text-transform: capitalize;
-  background-image: linear-gradient(to right, #095e61, #0f8a9b);
+  background-image: linear-linear(to right, #095e61, #0f8a9b);
   border-radius: 0.25rem;
   border: none;
   cursor: pointer;

@@ -95,7 +95,7 @@ const CheckoutPage = () => {
         {t.checkout.title}
       </h1>
 
-      <div className="mb-5 p-4 border  bg-gradient-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 text-white rounded-2xl">
+      <div className="mb-5 p-4 border  bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20 text-white rounded-2xl">
         <div className="border-b border-b-[#1BCDD2] pb-2">
           <h2 className="text-lg">
             {t.checkout.instructions.plan.title}

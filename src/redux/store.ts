@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import languageReducer from "./languageSlice";
+import { baseApi } from "./api/api";
 
 export const store = configureStore({
   reducer: {
+    [baseApi.reducerPath]: baseApi.reducer,
     language: languageReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(baseApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

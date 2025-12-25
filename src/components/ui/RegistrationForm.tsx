@@ -123,12 +123,12 @@ const RegistrationForm = ({ exit }: { exit?: boolean }) => {
         errorMessage={t?.contact?.form?.address?.error}
       />
 
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <Button
           type="submit"
           className={`${
             loading && "cursor-wait"
-          } flex justify-center items-center  px-8 py-1  bg-gradient-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] cursor-pointer transition duration-200  text-center text-base font-semibold`}
+          } flex justify-center items-center  px-8 py-1  bg-linear-to-r from-[#049e9e] to-[#30DBDC] hover:from-[#30DBDC] hover:to-[#439c9c] cursor-pointer transition duration-200  text-center text-base font-semibold`}
         >
           {loading ? <ButtonLoading /> : t.contact.form.button}
         </Button>

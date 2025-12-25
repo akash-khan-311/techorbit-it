@@ -10,19 +10,19 @@ import Script from "next/script";
 import FacebookPixel from "@/components/FacebookPixel";
 import { Suspense } from "react";
 
-const bengaliFont = Noto_Serif_Bengali({
-  variable: "--font-bengali",
-  subsets: ["bengali"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
+// const bengaliFont = Noto_Serif_Bengali({
+//   variable: "--font-bengali",
+//   subsets: ["bengali"],
+//   display: "swap",
+//   weight: ["400", "500", "600", "700"],
+// });
 
-const baloo = Baloo_Da_2({
-  variable: "--font-baloo",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
+// const baloo = Baloo_Da_2({
+//   variable: "--font-baloo",
+//   subsets: ["latin"],
+//   display: "swap",
+//   weight: ["400", "500", "600", "700"],
+// });
 
 export const metadata: Metadata = {
   title: "TechOrbit IT",
@@ -82,12 +82,12 @@ export default function RootLayout({
       </head>
       <body
         className={`
-          ${bengaliFont.variable}
-          ${baloo.variable}
+        
+          
           font-sans 
           antialiased 
           bg-slate-900 
-          bg-gradient-to-br 
+          bg-linear-to-br 
           from- 
           via-[#80F8C1]/10 
           to-[#309889]/10

@@ -63,7 +63,7 @@ const OurTeamSection = () => {
               key={member?._id}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0 }}
-              className="group p-10 rounded-2xl bg-gradient-to-tr from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white transition-all cursor-pointer"
+              className="group p-10 rounded-2xl bg-linear-to-tr from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white transition-all cursor-pointer"
             >
               {/* Image */}
               <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-gray-700 group-hover:border-blue-400 transition-all">
@@ -86,7 +86,7 @@ const OurTeamSection = () => {
               </p>
 
               {/* Hover line */}
-              <div className="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-blue-400 to-teal-300 transition-all mx-auto rounded-full"></div>
+              <div className="mt-4 h-1 w-0 group-hover:w-full bg-linear-to-r from-blue-400 to-teal-300 transition-all mx-auto rounded-full"></div>
             </motion.div>
           ))}
         </div>
