@@ -5,15 +5,8 @@ import { ArrowRight } from "lucide-react";
 import SplitText from "@/components/ui/SplitText";
 import RegistrationButton from "@/components/ui/shared/RegistrationButton";
 import { useTranslation } from "@/hooks/useTranslation";
-import { useGetTodosQuery } from "@/redux/api/api";
-
 const HeroSection = () => {
   const t = useTranslation();
-  const { data: todos, isLoading, isError } = useGetTodosQuery(undefined);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error</div>;
-  console.log(todos);
   return (
     <section
       id="home"
