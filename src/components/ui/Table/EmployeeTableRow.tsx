@@ -1,6 +1,7 @@
 import { IEmployee } from "@/types/employee.interface";
 import Image from "next/image";
 import React from "react";
+import EmployeeViewModal from "../Modal/EmployeeViewModal";
 
 const EmployeeTableRow = ({ employee }: { employee: IEmployee }) => {
   return (
@@ -41,10 +42,10 @@ const EmployeeTableRow = ({ employee }: { employee: IEmployee }) => {
         {employee?.email}
       </td>
       <td className={`py-2 px-3 text-base  font-normal min-w-62.5 text-white`}>
-        <div>
+        <div className="flex gap-5">
           <button
             type="button"
-            className="px-2 py-1 mr-3 text-sm text-white bg-blue-500 rounded cursor-pointer hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+            className="px-2 py-1 text-sm text-white bg-blue-500 rounded cursor-pointer hover:bg-blue-700 focus:outline-none focus:shadow-outline"
           >
             Edit
           </button>
@@ -54,6 +55,8 @@ const EmployeeTableRow = ({ employee }: { employee: IEmployee }) => {
           >
             Delete
           </button>
+
+          <EmployeeViewModal employee={employee} />
         </div>
       </td>
     </tr>

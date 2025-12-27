@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 import { jwtVerify } from "jose";
 
 export async function middleware(req: NextRequest) {
-  const token = req.cookies.get("accessToken")?.value;
+  const token = req.cookies.get("refreshToken")?.value;
   const { pathname } = req.nextUrl;
 
   //  CORS headers setup
@@ -47,7 +47,7 @@ export async function middleware(req: NextRequest) {
 
   if (token) {
     try {
-      const secret = new TextEncoder().encode(process.env.JWT_ACCESS_SECRET);
+      const secret = new TextEncoder().encode(process.env.JWT_REFRESH_SECRET);
       const { payload } = await jwtVerify(token, secret);
 
       if (isPublicRoute) {
