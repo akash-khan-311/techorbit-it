@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Modal from "./modal";
-import Button from "../button/button";
+import { Button } from "./button";
 
 const ConfirmationModalView: React.FC = () => {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
@@ -58,9 +58,9 @@ const ConfirmationModalView: React.FC = () => {
       >
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <svg
-                className="h-10 w-10 text-red-500"
+                className="w-10 h-10 text-red-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
@@ -84,11 +84,11 @@ const ConfirmationModalView: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md p-3">
+          <div className="p-3 border border-red-200 rounded-md bg-red-50 dark:bg-red-900/20 dark:border-red-800">
             <div className="flex">
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <svg
-                  className="h-5 w-5 text-red-400"
+                  className="w-5 h-5 text-red-400"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -128,9 +128,9 @@ const ConfirmationModalView: React.FC = () => {
       >
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <svg
-                className="h-10 w-10 text-orange-500"
+                className="w-10 h-10 text-orange-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
@@ -154,7 +154,7 @@ const ConfirmationModalView: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-md p-3">
+          <div className="p-3 border border-orange-200 rounded-md bg-orange-50 dark:bg-orange-900/20 dark:border-orange-800">
             <p className="text-sm text-orange-700 dark:text-orange-300">
               Any unsaved changes will be lost. Make sure to save your work
               before logging out.
@@ -185,9 +185,9 @@ const ConfirmationModalView: React.FC = () => {
       >
         <div className="space-y-4">
           <div className="flex items-start space-x-3">
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <svg
-                className="h-10 w-10 text-yellow-500"
+                className="w-10 h-10 text-yellow-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
@@ -204,18 +204,18 @@ const ConfirmationModalView: React.FC = () => {
               <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
                 Reset All Settings
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
                 This will restore all settings to their default values. Your
                 personal data and files will not be affected.
               </p>
             </div>
           </div>
 
-          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-md p-4">
-            <h4 className="text-sm font-medium text-yellow-800 dark:text-yellow-200 mb-2">
+          <div className="p-4 border border-yellow-200 rounded-md bg-yellow-50 dark:bg-yellow-900/20 dark:border-yellow-800">
+            <h4 className="mb-2 text-sm font-medium text-yellow-800 dark:text-yellow-200">
               The following will be reset:
             </h4>
-            <ul className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
+            <ul className="space-y-1 text-sm text-yellow-700 dark:text-yellow-300">
               <li>• Theme preferences</li>
               <li>• Notification settings</li>
               <li>• Display options</li>
