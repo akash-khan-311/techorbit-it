@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Modal from "./modal";
-import Button from "../button/button";
+import { Button } from "./button";
 
 const SuccessModalView: React.FC = () => {
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
@@ -37,10 +37,10 @@ const SuccessModalView: React.FC = () => {
         onClose={() => setIsSuccessOpen(false)}
         size="sm"
       >
-        <div className="text-center space-y-4">
-          <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 dark:bg-green-900/30">
+        <div className="space-y-4 text-center">
+          <div className="flex items-center justify-center w-16 h-16 mx-auto bg-green-100 rounded-full dark:bg-green-900/30">
             <svg
-              className="h-8 w-8 text-green-600 dark:text-green-400"
+              className="w-8 h-8 text-green-600 dark:text-green-400"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="2"
@@ -58,7 +58,7 @@ const SuccessModalView: React.FC = () => {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               Success!
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
               Your changes have been saved successfully. You can continue
               working or close this dialog.
             </p>
@@ -82,10 +82,10 @@ const SuccessModalView: React.FC = () => {
         onClose={() => setIsCompletionOpen(false)}
         size="md"
       >
-        <div className="text-center space-y-6">
-          <div className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-blue-100 dark:bg-blue-900/30">
+        <div className="space-y-6 text-center">
+          <div className="flex items-center justify-center w-20 h-20 mx-auto bg-blue-100 rounded-full dark:bg-blue-900/30">
             <svg
-              className="h-10 w-10 text-blue-600 dark:text-blue-400"
+              className="w-10 h-10 text-blue-600 dark:text-blue-400"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="2"
@@ -103,17 +103,17 @@ const SuccessModalView: React.FC = () => {
             <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
               Task Completed!
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
               You have successfully completed the onboarding process. Welcome to
               our platform!
             </p>
           </div>
 
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-            <h4 className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
+          <div className="p-4 border border-blue-200 rounded-lg bg-blue-50 dark:bg-blue-900/20 dark:border-blue-800">
+            <h4 className="mb-2 text-sm font-medium text-blue-800 dark:text-blue-200">
               What&apos;s Next?
             </h4>
-            <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1 text-left">
+            <ul className="space-y-1 text-sm text-left text-blue-700 dark:text-blue-300">
               <li>• Explore your dashboard</li>
               <li>• Set up your profile</li>
               <li>• Connect with team members</li>
@@ -144,11 +144,11 @@ const SuccessModalView: React.FC = () => {
         onClose={() => setIsAchievementOpen(false)}
         size="md"
       >
-        <div className="text-center space-y-6">
+        <div className="space-y-6 text-center">
           <div className="relative">
-            <div className="mx-auto flex items-center justify-center h-24 w-24 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse">
+            <div className="flex items-center justify-center w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-purple-400 to-pink-400 animate-pulse">
               <svg
-                className="h-12 w-12 text-white"
+                className="w-12 h-12 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="2"
@@ -162,7 +162,7 @@ const SuccessModalView: React.FC = () => {
               </svg>
             </div>
             <div className="absolute -top-2 -right-2">
-              <div className="flex items-center justify-center h-8 w-8 rounded-full bg-yellow-400 text-white text-xs font-bold">
+              <div className="flex items-center justify-center w-8 h-8 text-xs font-bold text-white bg-yellow-400 rounded-full">
                 🎉
               </div>
             </div>
@@ -172,16 +172,16 @@ const SuccessModalView: React.FC = () => {
             <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
               Achievement Unlocked!
             </h3>
-            <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-1">
+            <h4 className="mt-1 text-lg font-semibold text-gray-900 dark:text-gray-100">
               First Modal Master
             </h4>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
               Congratulations! You&apos;ve successfully opened your first modal
               component. You&apos;re on your way to becoming a UI master!
             </p>
           </div>
 
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-4">
+          <div className="p-4 border border-purple-200 rounded-lg bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 dark:border-purple-800">
             <div className="flex items-center justify-between">
               <div className="text-left">
                 <h5 className="text-sm font-medium text-purple-800 dark:text-purple-200">
@@ -201,9 +201,9 @@ const SuccessModalView: React.FC = () => {
               </div>
             </div>
             <div className="mt-3">
-              <div className="bg-purple-200 dark:bg-purple-800 rounded-full h-2">
+              <div className="h-2 bg-purple-200 rounded-full dark:bg-purple-800">
                 <div
-                  className="bg-purple-500 h-2 rounded-full"
+                  className="h-2 bg-purple-500 rounded-full"
                   style={{ width: "25%" }}
                 ></div>
               </div>
@@ -214,7 +214,7 @@ const SuccessModalView: React.FC = () => {
             <Button
               onClick={() => setIsAchievementOpen(false)}
               variant="default"
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transform hover:scale-105"
+              className="transform bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 hover:scale-105"
               size="lg"
             >
               Awesome!

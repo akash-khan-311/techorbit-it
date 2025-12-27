@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Modal from "./modal";
-import Button from "../button/button";
+import { Button } from "./button";
 
 const SizeVariantsView: React.FC = () => {
   const [isSmallOpen, setIsSmallOpen] = useState(false);
@@ -82,8 +82,8 @@ const SizeVariantsView: React.FC = () => {
           <p className="text-gray-700 dark:text-gray-300">
             Default size, good for most content. Max width: 512px (32rem).
           </p>
-          <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-            <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">
+          <div className="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+            <h4 className="mb-2 font-medium text-gray-800 dark:text-gray-200">
               Sample Content
             </h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -110,9 +110,9 @@ const SizeVariantsView: React.FC = () => {
           <p className="text-gray-700 dark:text-gray-300">
             Great for detailed information and forms. Max width: 672px (42rem).
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+              <h3 className="mb-2 font-semibold text-gray-800 dark:text-gray-200">
                 Feature 1
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -120,8 +120,8 @@ const SizeVariantsView: React.FC = () => {
                 information.
               </p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">
+            <div className="p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
+              <h3 className="mb-2 font-semibold text-gray-800 dark:text-gray-200">
                 Feature 2
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -153,13 +153,13 @@ const SizeVariantsView: React.FC = () => {
             Best for complex layouts and extensive content. Max width: 896px
             (56rem).
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <div
                 key={item}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-4 rounded-lg border border-gray-200 dark:border-gray-700"
+                className="p-4 border border-gray-200 rounded-lg bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 dark:border-gray-700"
               >
-                <h4 className="font-medium mb-2 text-gray-800 dark:text-gray-200">
+                <h4 className="mb-2 font-medium text-gray-800 dark:text-gray-200">
                   Item {item}
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
