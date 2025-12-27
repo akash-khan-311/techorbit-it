@@ -50,7 +50,7 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[999] flex items-center justify-center 
+      className={`fixed inset-0 z-999 flex items-center justify-center 
       transition-opacity duration-300
       ${
         open ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-0"
@@ -68,11 +68,11 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
         transition-all duration-300 
         ${open ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
       >
-        <div className="flex items-start justify-between pb-3 mb-4 border-b text-white">
+        <div className="flex items-start justify-between pb-3 mb-4 text-white border-b">
           <h3 className="text-3xl font-semibold">Edit Customer</h3>
           <button
             onClick={() => setOpen(false)}
-            className="text-3xl  leading-none text-red-400 cursor-pointer rounded-full "
+            className="text-3xl leading-none text-red-400 rounded-full cursor-pointer "
           >
             <SlClose />
           </button>
@@ -86,7 +86,7 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
                 type="text"
                 id="name"
                 name="name"
-                className="border p-2 rounded w-full focus:outline-green-700 text-white"
+                className="w-full p-2 text-white border rounded focus:outline-green-700"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
               />
@@ -103,7 +103,7 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
                 type="email"
                 id="email"
                 name="email"
-                className="border p-2 rounded w-full focus:outline-green-700 text-white"
+                className="w-full p-2 text-white border rounded focus:outline-green-700"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
               />
@@ -120,7 +120,7 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
                 type="text"
                 id="phone"
                 name="phone"
-                className="border p-2 rounded w-full focus:outline-green-700 text-white"
+                className="w-full p-2 text-white border rounded focus:outline-green-700"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
               />
@@ -132,7 +132,7 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
                 type="text"
                 id="facebookPage"
                 name="facebookPage"
-                className="border p-2 rounded w-full focus:outline-green-700 text-white"
+                className="w-full p-2 text-white border rounded focus:outline-green-700"
                 value={form.facebookPage}
                 onChange={(e) =>
                   setForm({ ...form, facebookPage: e.target.value })
@@ -151,7 +151,7 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
                 type="text"
                 id="address"
                 name="address"
-                className="border p-2 rounded w-full focus:outline-green-700 text-white"
+                className="w-full p-2 text-white border rounded focus:outline-green-700"
                 value={form.address}
                 onChange={(e) => setForm({ ...form, address: e.target.value })}
               />
@@ -160,15 +160,15 @@ const CustomerEditModal = ({ customer, open, setOpen }: Props) => {
         </div>
 
         {/* Footer */}
-        <div className="flex justify-end gap-2 border-t pt-4 mt-10">
+        <div className="flex justify-end gap-2 pt-4 mt-10 border-t">
           <button
-            className="px-6 py-2 text-red-500 border border-red-500 hover:bg-red-500 hover:text-white transition-colors duration-150 rounded cursor-pointer"
+            className="px-6 py-2 text-red-500 transition-colors duration-150 border border-red-500 rounded cursor-pointer hover:bg-red-500 hover:text-white"
             onClick={() => setOpen(false)}
           >
             Close
           </button>
           <button
-            className="px-6 py-2 text-white bg-green-500 rounded cursor-pointer hover:bg-green-600 transition-colors duration-150"
+            className="px-6 py-2 text-white transition-colors duration-150 bg-green-500 rounded cursor-pointer hover:bg-green-600"
             onClick={handleSubmit}
           >
             Save Changes

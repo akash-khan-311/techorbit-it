@@ -2,11 +2,13 @@
 import React, { useEffect, useState } from "react";
 import CustomerTableRow from "@/components/ui/Table/CustomerTableRow";
 import { ILead } from "@/types/lead.interface";
-
 import Loader from "@/components/Loader";
 
 const CustomerTableClient = () => {
   const [customers, setCustomers] = useState<ILead[] | null>(null);
+
+  // const token = useAppSelector(useCurrentToken);
+  // const user = useAppSelector(useCurrentUser);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,27 +32,27 @@ const CustomerTableClient = () => {
   return (
     <div>
       <div className="text-white">
-        <h2 className="text-5xl font-semibold">Customer List</h2>
-        <p className="text-xl my-2">TechOrbit IT Admin Panel</p>
+        <h2 className="text-5xl font-semibold">Customer List </h2>
+        <p className="my-2 text-xl">TechOrbit IT Admin Panel</p>
       </div>
 
-      <div className="w-full overflow-x-scroll md:overflow-auto max-w-7xl 2xl:max-w-none mt-10">
+      <div className="w-full mt-10 overflow-x-scroll md:overflow-auto max-w-7xl 2xl:max-w-none">
         <table className="table-auto  overflow-scroll md:overflow-auto w-full text-left font-inter border border-[#1BCDD2]  ">
-          <thead className="rounded-lg text-base  font-semibold w-full">
+          <thead className="w-full text-base font-semibold rounded-lg">
             <tr className="bg-slate-700">
-              <th className="py-3 px-3 text-white sm:text-base font-bold whitespace-nowrap">
+              <th className="px-3 py-3 font-bold text-white sm:text-base whitespace-nowrap">
                 Name
               </th>
-              <th className="py-3 px-3 text-white sm:text-base font-bold whitespace-nowrap">
+              <th className="px-3 py-3 font-bold text-white sm:text-base whitespace-nowrap">
                 Contact No.
               </th>
-              <th className="py-3 px-3 text-white sm:text-base font-bold whitespace-nowrap">
+              <th className="px-3 py-3 font-bold text-white sm:text-base whitespace-nowrap">
                 Designation
               </th>
-              <th className="py-3 px-3 text-white sm:text-base font-bold whitespace-nowrap">
+              <th className="px-3 py-3 font-bold text-white sm:text-base whitespace-nowrap">
                 Email
               </th>
-              <th className="py-3 px-3 text-white sm:text-base font-bold whitespace-nowrap">
+              <th className="px-3 py-3 font-bold text-white sm:text-base whitespace-nowrap">
                 Actions
               </th>
             </tr>
@@ -64,7 +66,7 @@ const CustomerTableClient = () => {
               <tr className="bg-slate-900">
                 <td
                   colSpan={6}
-                  className="text-4xl text-center py-10 text-white"
+                  className="py-10 text-4xl text-center text-white"
                 >
                   No Customer Found
                 </td>

@@ -42,14 +42,23 @@ export async function POST(req: Request) {
       { expiresIn: "15m" }
     );
 
-    const refreshToken = jwt.sign({ id: user._id }, refreshSecret, {
-      expiresIn: "7d",
-    });
+    const refreshToken = jwt.sign(
+      {
+        id: user._id,
+        role: user.role,
+        employeeId: user.employeeId,
+        email: user.email,
+      },
+      refreshSecret,
+      {
+        expiresIn: "7d",
+      }
+    );
 
     const cookieStore = await cookies();
 
-    // Access Token
-    cookieStore.set("accessToken", accessToken, {
+    // set Refresh Token on Cookie
+    cookieStore.set("refreshToken", refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
@@ -57,16 +66,8 @@ export async function POST(req: Request) {
       path: "/",
     });
 
-    // Refresh Token
-    cookieStore.set("refreshToken", refreshToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
-      maxAge: 60 * 60 * 24 * 7, // ✅ 7 দিন
-      path: "/",
-    });
-
     return NextResponse.json({
+      data: { accessToken },
       success: true,
       message: "Login successful",
     });
