@@ -98,7 +98,7 @@ const TransactionTableRow = ({ transaction: transaction }: Props) => {
         </p>
       </td>
       <td className="p-4 border-b border-slate-200">
-        <p className=" text-white flex flex-col">
+        <p className="flex flex-col text-white ">
           <span className="">{name}</span>
           <span className="text-sm">{phone}</span>
         </p>
@@ -118,18 +118,18 @@ const TransactionTableRow = ({ transaction: transaction }: Props) => {
         <p className="block text-sm text-white">
           {pathname === "/transactions" ? (
             status === "Paid" ? (
-              <span className="bg-green-500 px-4 py-1 rounded-xl">Paid</span>
+              <span className="px-4 py-1 bg-green-500 rounded-xl">Paid</span>
             ) : (
-              <span className="bg-red-400 px-4 py-1 rounded-xl">Unpaid</span>
+              <span className="px-4 py-1 bg-red-400 rounded-xl">Unpaid</span>
             )
           ) : (
             <div>
               {complete === "Pending" ? (
-                <span className="bg-red-400 px-4 py-1 rounded-xl">
+                <span className="px-4 py-1 bg-red-400 rounded-xl">
                   {complete}
                 </span>
               ) : (
-                <span className="bg-green-500 px-4 py-1 rounded-xl">
+                <span className="px-4 py-1 bg-green-500 rounded-xl">
                   {complete}
                 </span>
               )}
@@ -148,7 +148,8 @@ const TransactionTableRow = ({ transaction: transaction }: Props) => {
                     handleChangeStatus(val as "Paid" | "Unpaid");
                   }
                 }}
-                className="focus:outline-none cursor-pointer text-lg bg-transparent"
+                disabled={complete === "Completed"}
+                className="text-lg bg-transparent cursor-pointer focus:outline-none"
               >
                 <option className="text-black" value="">
                   Change Status
@@ -173,7 +174,7 @@ const TransactionTableRow = ({ transaction: transaction }: Props) => {
                     handleComplete(val as "Completed" | "Pending");
                   }
                 }}
-                className="focus:outline-none cursor-pointer text-lg bg-transparent"
+                className="text-lg bg-transparent cursor-pointer focus:outline-none"
               >
                 <option className="text-black" value="">
                   Change Status

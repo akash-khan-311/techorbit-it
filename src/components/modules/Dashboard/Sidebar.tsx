@@ -5,21 +5,24 @@ import { FcSettings } from "react-icons/fc";
 import { AiOutlineBars } from "react-icons/ai";
 import AdminMenu from "./Menu";
 import MenuItem from "./MenuItem";
-import { logout } from "@/lib/logout";
+import { logout as ServerLogout } from "@/lib/logout";
 import { useRouter } from "next/navigation";
 import { showToast } from "nextjs-toast-notify";
 import Logo from "@/components/ui/shared/Logo";
+import { useAppDispatch } from "@/redux/hooks";
+import { logout } from "@/redux/features/auth/authSlice";
 
 const Sidebar = () => {
   const [isActive, setActive] = useState(true);
   const router = useRouter();
-
+  const dispatch = useAppDispatch();
   // Sidebar Responsive Handler
   const handleToggle = () => {
     setActive(!isActive);
   };
   const handleLogout = async () => {
-    const result = await logout();
+    const result = await ServerLogout();
+    dispatch(logout());
     if (result.success) {
       showToast.success(result.message, {
         duration: 4000,
@@ -42,12 +45,12 @@ const Sidebar = () => {
   return (
     <>
       {/* Small Screen Navbar */}
-      <div className="  text-gray-100 flex justify-between md:hidden relative z-[99999]">
+      <div className="relative flex justify-between text-gray-100  md:hidden z-99999">
         <button
           onClick={handleToggle}
-          className="absolute right-0 top-0 p-4 focus:outline-none "
+          className="absolute top-0 right-0 p-4 focus:outline-none "
         >
-          <AiOutlineBars className="h-8 w-8" />
+          <AiOutlineBars className="w-8 h-8" />
         </button>
       </div>
       {/* Sidebar */}
@@ -57,7 +60,7 @@ const Sidebar = () => {
         }  md:translate-x-0  transition duration-200 ease-in-out`}
       >
         <div>
-          <div className="shadow-xl shadow-white/10 rounded-xl py-3 flex justify-center items-center ">
+          <div className="flex items-center justify-center py-3 shadow-xl shadow-white/10 rounded-xl ">
             {/* <Logo className={"w-10 h-10 ml-3"} /> */}
             <Logo />
           </div>
@@ -74,7 +77,7 @@ const Sidebar = () => {
           <MenuItem icon={FcSettings} label="Profile" path="/profile" />
           <button
             onClick={handleLogout}
-            className="flex w-full items-center px-4 py-2  hover:backdrop-blur-sm hover:bg-white/10 text-white transition-colors duration-300 transform"
+            className="flex items-center w-full px-4 py-2 text-white transition-colors duration-300 transform hover:backdrop-blur-sm hover:bg-white/10"
           >
             <GrLogout className="w-5 h-5" />
             <span className="mx-4 font-medium">Logout</span>
