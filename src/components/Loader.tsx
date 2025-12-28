@@ -6,7 +6,7 @@ import React from "react";
 const Loader = ({ smallHeight }: any) => {
   return (
     <div
-      className={` ${smallHeight ? "h-[250px]" : "min-h-[calc(105vh-100px)]"}
+      className={` ${smallHeight ? "h-62.5" : "min-h-[calc(105vh-100px)]"}
       flex 
       flex-col 
       justify-center 
