@@ -29,7 +29,7 @@ export type IEmployee = {
   profileImage: string;
   nidFrontImage: string;
   nidBackImage: string;
-  salary: number;
+  salary: string;
   designation: string;
   address: string;
   createdAt: Date;
