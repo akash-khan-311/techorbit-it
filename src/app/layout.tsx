@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
+import { Noto_Serif_Bengali } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -9,6 +10,11 @@ import Script from "next/script";
 import FacebookPixel from "@/components/FacebookPixel";
 import { Suspense } from "react";
 
+const sansBangla = Noto_Serif_Bengali({
+  subsets: ["bengali", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bangla",
+});
 // ! This font will be use here
 // const bengaliFont = Noto_Serif_Bengali({
 //   variable: "--font-bengali",
@@ -83,9 +89,9 @@ export default function RootLayout({
       <body
         className={`
         
+          ${sansBangla.variable}
           
-          font-sans 
-          antialiased 
+          
           bg-slate-900 
           bg-linear-to-br 
           from- 

@@ -145,6 +145,7 @@ input:-webkit-autofill {
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  font-family: var(--font-bangla), system-ui, sans-serif;
 }
 .bg {
   background: url("/images/page-bg.jpg");

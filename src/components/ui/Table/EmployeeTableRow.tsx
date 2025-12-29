@@ -2,6 +2,7 @@ import { IEmployee } from "@/types/employee.interface";
 import Image from "next/image";
 import React from "react";
 import EmployeeViewModal from "../Modal/EmployeeViewModal";
+import EmployeeEditButton from "../shared/EmployeeEditbutton";
 
 const EmployeeTableRow = ({ employee }: { employee: IEmployee }) => {
   return (
@@ -43,12 +44,7 @@ const EmployeeTableRow = ({ employee }: { employee: IEmployee }) => {
       </td>
       <td className={`py-2 px-3 text-base  font-normal min-w-62.5 text-white`}>
         <div className="flex gap-5">
-          <button
-            type="button"
-            className="px-2 py-1 text-sm text-white bg-blue-500 rounded cursor-pointer hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-          >
-            Edit
-          </button>
+          <EmployeeEditButton employee={employee} />
           <button
             type="button"
             className="px-2 py-1 text-sm text-white bg-red-500 rounded cursor-pointer hover:bg-red-700 focus:outline-none focus:shadow-outline"
