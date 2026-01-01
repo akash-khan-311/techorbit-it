@@ -23,16 +23,6 @@ export default function BlogCard({ blog }: { blog: any }) {
             />
           </div>
           <div className="md:h-64">
-            <div className="flex mt-6 ml-4 text-white gap-x-5">
-              {blog.tags.map((tag: any) => (
-                <span
-                  key={tag}
-                  className="border bg-gray-400/20 rounded-md px-2 py-1 text-[9px]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
             <div className="flex flex-col items-start justify-start px-6 py-4 mb-auto ">
               <h2 className="mb-3 text-xl font-semibold text-left text-white">
                 {blog.title}
@@ -40,6 +30,7 @@ export default function BlogCard({ blog }: { blog: any }) {
               <p className="text-sm text-left text-gray-300">{blog.excerpt}</p>
             </div>
           </div>
+          <hr />
           <div className="flex flex-row items-center justify-between px-6 py-3 ">
             <span className="flex flex-row items-center py-1 mr-1 text-xs text-white font-regular">
               <FaUser size={15} className="mr-1" />

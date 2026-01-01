@@ -5,8 +5,10 @@ import CareerSection from "@/components/modules/Careers/CareerSection";
 import ContactSection from "@/components/modules/Contact/ContactSection";
 import CustomerAttraction from "@/components/modules/CustomerAttraction/CustomerAttraction";
 import HeroSection from "@/components/modules/Home/Hero";
+import Portfolio from "@/components/modules/Portfolio/Portfolio";
 import PricingPage from "@/components/modules/Pricing/Pricing";
 import ServicesSection from "@/components/modules/Services/ServicesSection";
+import ProjectCard from "@/components/ui/Card/ProjectCard";
 import { Testimonials } from "@/components/ui/Testimonials";
 import type { Metadata } from "next";
 import { Suspense } from "react";
@@ -83,6 +85,7 @@ export default function Home() {
   return (
     <Suspense fallback={<Loader />}>
       <HeroSection />
+      <Portfolio />
       <AboutSection />
       <ServicesSection />
       <div className="my-10">
