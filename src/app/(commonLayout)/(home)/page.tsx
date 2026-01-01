@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <Suspense fallback={<Loader />}>
       <HeroSection />
-      <Portfolio />
+      {/* <Portfolio /> */}
       <AboutSection />
       <ServicesSection />
       <div className="my-10">
