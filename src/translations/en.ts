@@ -37,6 +37,11 @@ const en = {
     subTitle:
       "We provide web design, development, and digital solutions to help your business grow online.",
   },
+  portfolio: {
+    title: "Our Case Studies",
+    subTitle:
+      "We showcase real-world projects where we partnered with businesses to design, develop, and deliver reliable digital solutions.",
+  },
   about: {
     title: "About TechOrbit IT",
     subTitle:

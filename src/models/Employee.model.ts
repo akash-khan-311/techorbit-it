@@ -25,7 +25,6 @@ const EmployeeSchema = new mongoose.Schema<IEmployee>({
   createdAt: { type: Date, default: Date.now },
 });
 
-// Avoid recompilation/overwrite model issue in Next.js dev
 const Employee: Model<IEmployee> =
   (mongoose.models.Employee as Model<IEmployee>) ||
   mongoose.model<IEmployee>("Employee", EmployeeSchema);
