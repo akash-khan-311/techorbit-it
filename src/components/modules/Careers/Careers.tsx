@@ -38,10 +38,10 @@ const JobSection = () => {
 
           {/* CTA Section */}
           <div className="mt-16 border p-8 rounded-2xl text-center bg-linear-to-r from-[#30DBDC]/20 via-[#30DBDC]/20 to-[#035A69]/20  text-white">
-            <h4 className="text-lg font-medium text-white mb-2">
+            <h4 className="mb-2 text-lg font-medium text-white">
               Don’t see your role?
             </h4>
-            <p className="text-gray-200 mb-4">
+            <p className="mb-4 text-gray-200">
               We’re always looking for talented people. Send your CV to{" "}
               <span className="font-semibold text-[#30DBDC]">
                 techorbitit3@gmail.com
@@ -60,9 +60,9 @@ const JobSection = () => {
           <TextType
             text={t.careers.noOpenings.title}
             key={t.careers.noOpenings.title}
-            className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-6"
+            className="mb-6 text-2xl font-bold text-white md:text-3xl lg:text-4xl"
           />
-          <p className="text-sm md:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto text-sm text-gray-400 md:text-base lg:text-lg">
             {t.careers.noOpenings.text}
           </p>
         </div>
